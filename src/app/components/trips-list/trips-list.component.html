@@ -1,32 +1,36 @@
-
 <div class="card">
   <div class="card-header">
-   <h3> Trips List </h3>
+    <h3>Trips List</h3>
   </div>
 
   <div class="card-body">
-    <table class="table">
-      <thead>
-        <tr>
-          <th>pictureUrl</th>
-          <th>Destination</th>
-          <th>Price</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let item of data">
-          <td > <img [src]= item.pictureUrl
-                     [width]= width
-                       > </td>
-          <td>{{item.destination}}
-          <td>{{item.price}}</td>
-        </tr>
+    <!-- DEBUT-->
+    <div class="row">
+      <div
+        class="card align-items-center"
+        style="width:400px; margin: 5px"
+        *ngFor="let item of data "
+      >
+        <img
+          class="card-img-top center"
+          [src]="item.pictureUrl"
+          [title]="item.destination"
+          [style.width.px]="'200'"
+          [style.height.px]="'200'"
+          [style.margin.px]="'5'"
+        />
+        <div class="card-body text-center">
+          <h4 class="card-title">{{ item.destination }}</h4>
 
-      </tbody>
-    </table>
+           <h2 class="card-text">
+            {{ item.price | currency: "EUR":"symbol":"1.2-2" }}
+          </h2>
+          <a class="btn btn-primary"> Show Details </a>
+        </div>
+      </div>
+    </div>
 
-
+    <!--   FIN      -->
 
   </div>
-
 </div>
