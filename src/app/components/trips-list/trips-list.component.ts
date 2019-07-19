@@ -11,6 +11,9 @@ export class TripsListComponent implements OnInit {
 
   data: Trip[];
 
+  width: number = 80;
+  height: number = 80;
+
   constructor(private service: TripsService) { }
 
   ngOnInit() {
