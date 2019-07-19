@@ -11,6 +11,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { TripsListComponent } from './components/trips-list/trips-list.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { TripsDetailsComponent } from './components/trips-details/trips-details.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     FooterComponent,
     TripsListComponent,
     WelcomeComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    TripsDetailsComponent
   ],
   imports: [
     BrowserModule,
