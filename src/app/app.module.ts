@@ -12,6 +12,7 @@ import { TripsListComponent } from './components/trips-list/trips-list.component
 import { WelcomeComponent } from './components/welcome/welcome.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { TripsDetailsComponent } from './components/trips-details/trips-details.component';
+import { CartComponent } from './components/cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { TripsDetailsComponent } from './components/trips-details/trips-details.
     TripsListComponent,
     WelcomeComponent,
     NotFoundComponent,
-    TripsDetailsComponent
+    TripsDetailsComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,

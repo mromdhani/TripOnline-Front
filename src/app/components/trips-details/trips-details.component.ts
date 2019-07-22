@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Trip } from 'src/app/domain/trip';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TripsService } from 'src/app/services/trips.service';
+import { CartService } from 'src/app/services/cart.service';
 
 @Component({
   selector: 'app-trips-details',
@@ -15,7 +16,8 @@ export class TripsDetailsComponent implements OnInit {
   errorMessage: string;
   constructor(private route: ActivatedRoute,
               private router: Router,
-              private tripsService: TripsService) {
+              private tripsService: TripsService,
+              private cartService: CartService ) {
   }
 
   ngOnInit(): void {
@@ -41,5 +43,11 @@ export class TripsDetailsComponent implements OnInit {
   onBack(): void {
       this.router.navigate(['/list']);
   }
+  addToCart() {
 
+    this.cartService.addToCart(this.trip);
+    console.log('>>>>  Dans addToCart()');
+    console.log('>>>>  Taille de la cart: '+this.cartService.getCartLength());
+    this.router.navigate(['/list']);   // Programmatic navigation
+  }
 }
