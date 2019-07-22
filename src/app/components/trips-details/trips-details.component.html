@@ -1,1 +1,49 @@
-<h1>Détails du Trip In progress</h1>
+<div class="card offset-1 col-md-10">
+  <div class="card-header bg-info text-white">
+        <h2>Details for {{ trip?.destination }} </h2>
+  </div>
+   <div class="card-body">
+    <div class='row'>
+      <div class='col-md-6'>
+          <div class='row'>
+              <div class='col-md-3'>Destination:</div>
+              <div class='col-md-6'>{{trip?.destination}}</div>
+          </div>
+          <div class='row'>
+              <div class='col-md-3'>Code:</div>
+              <div class='col-md-6'>{{trip?.id}}</div>
+          </div>
+          <div class='row'>
+              <div class='col-md-3'>Description:</div>
+              <div class='col-md-6'>{{trip?.destination}}</div>
+          </div>
+
+          <div class='row'>
+              <div class='col-md-3'>Price:</div>
+              <div class='col-md-6'>
+            {{trip?.price|currency:'EUR':'symbol':'1.2-2'}}</div>
+          </div>
+
+
+      </div>
+      <div class='col-md-6 align-items-center'>
+          <img class='center img-responsive'
+               [style.width.px]='150'
+               [style.height.px]='150'
+               [style.margin.px]='2'
+               [src]='trip?.pictureUrl'
+               [title]='trip?.destination'/>
+      </div>
+  </div>
+  <div class="row">
+    <div class='card col-md-10'>
+      <a name="" id="" class="btn btn-primary"   role="button" >Add to cart</a>
+  </div>
+  </div>
+  </div>
+  <div class="card-footer text-muted">
+    <a class='btn btn-lg' (click)='onBack()' style='width:100px'>
+      <i class="fa fa-angle-double-left"></i> Back
+   </a>
+  </div>
+</div>
